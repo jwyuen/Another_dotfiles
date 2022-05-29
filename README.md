@@ -1,6 +1,6 @@
 
 <div align='center'>
-  <samp><h1>My Awesome(WM) Dotfiles</h1></samp>
+  <samp><h1>Clone of N3k0Ch4n "My Awesome(WM) Dotfiles" (customized for Fedora)</h1></samp>
   
   <p>
     <a href="https://github.com/N3k0Ch4n/Another_dotfiles/stargazers"><img src="https://img.shields.io/github/stars/N3k0Ch4n/Another_dotfiles?colorA=151515&colorB=8C977D&style=for-the-badge"></a>
@@ -31,25 +31,43 @@
 ## 👀 <samp>DETAILS:</samp> 
 <img alt="rice" align="right" width="400px" src="https://i.redd.it/grap6cd8de191.png"/>
 
-- **OS**   -   Arch Linux
-- **WM**   -   Awesome
-- **Term**  -   URxvt
+- **OS**   -   Fedora
+- **WM**   -   Awesome (latest from master on git)
+- **Term**  -   Kitty (changed from URxvt)
 - **Comp**  -   Picom
 - **Resolution**  -  1920x1080
 
 ## 🚀 <samp>DEPENDENCIES:</samp>
 
-- Awesome-git
+- Awesome
 - inotify-tools
 - playerctl
 - brightnessctl
 - pulseaudio
-- pactl
-- network-manager (I use this for the wifi)
-- urxvt (change default terminal in "awesome/conf/init.lua")
+- pactl (currently no package on Fedora)...?
+- NetworkManager (I use this for the wifi)
+- kitty (change default terminal in "awesome/conf/init.lua")
 - Roboto-Mono font
 - Nerd Font
 - Icomoon Font
+
+## 🔧 <samp>Notes on Compiling latest Awesome on Fedora</samp>
+
+Get build deps to build awesome:
+
+```sh
+$ sudo dnf build-dep awesome
+```
+
+Clone awesome github then:
+
+
+```sh
+make
+sudo make install
+```
+
+There's something wrong with make package so just use sudo make install
 
 ## 🔧 <samp>Installation:</samp>
 
@@ -58,17 +76,15 @@
 Firstly, clone the repository.
 
 ```sh
-$ git clone https://github.com/N3k0Ch4n/Another_dotfiles.git
+$ git clone https://github.com/jwyuen/Another_dotfiles.git
 ```
 
 Then, Copy and paste "Awesome" folder into ".config" folder.
 
 ```sh
 $ cd Another_dotfiles/
-$ cp -rf /conf/awesome $HOME/.config/
-$ cp -rf /conf/picom $HOME/.config/
-$ cp -rf /conf/.Xresources $HOME/
-$ cp -rf /fonts/* $HOME/.local/share/fonts/
+$ chmod +x install.sh
+$ ./install.sh
 ```
 
 Lastly, change the following variables suitable to your liking
@@ -93,6 +109,10 @@ theme.wallpaper = "your/wallpaper/location/Ur_wall.png"
 
 - Improved notification's appearance
 - Fix the bug ofc
+
+## <samp>Other issues:</samp>
+
+- Never finished theming kitty terminal to match this rice....
 
 ## 💕 <samp>Credits:</samp>
 
